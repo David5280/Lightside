@@ -7,10 +7,12 @@ import DataContainer from './DataContainer/DataContainer';
 function App() {
   return (
     <main className="App">
-      <Header />
-      <NavBar />
       <Aside />
-      <DataContainer />
+      <section className='app-right-side'>
+        <Header />
+        <NavBar />
+        <DataContainer />
+      </section>
     </main>
   );
 }

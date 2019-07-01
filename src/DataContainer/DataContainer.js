@@ -3,7 +3,7 @@ import InfoCard from '../InfoCard/InfoCard';
 
 const DataContainer = () => {
   return (
-    <section>
+    <section className='info-card-container'>
       <InfoCard />
     </section>
   )

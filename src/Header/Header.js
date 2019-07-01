@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 
 const Header = () => {
   return (
-    <header>
+    <header className='app-header'>
       <h1>LIGHT<span className='header-accent-color'>SIDE</span></h1>
-      <button>Favorites</button>
+      <button className='header-favorite-btn'>Favorites</button>
     </header>
   )
 }
