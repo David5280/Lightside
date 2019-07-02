@@ -1,0 +1,9 @@
+.info-card-container {
+  background-color: rgba(241, 241, 241, .5);
+  border: 1px solid;
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-around;
+  min-height: 450px;
+  padding: 10px;
+}

@@ -1,0 +1,21 @@
+.info-card {
+  box-sizing: border-box;
+  background-color: #f1f1f1;
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 250px;
+  height: fit-content;
+}
+
+.info-card-header {
+  display: flex;
+  border-bottom: 2px dotted;
+}
+
+h3 {
+  margin: auto;
+}
+
+
