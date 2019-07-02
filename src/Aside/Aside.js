@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-const Aside = () => {
+const Aside = ({ openingCrawl }) => {
   return (
     <aside>
-      <p>Placeholder</p>
+      <p className='aside-opening-crawl'>{openingCrawl}</p>
     </aside>
   )
 }
