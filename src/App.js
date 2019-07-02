@@ -37,7 +37,7 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <Aside openingCrawl={this.state.films}/>
+        <Aside filmData={this.state.films} />
         <section className='app-right-side'>
           <Header />
           <NavBar />
