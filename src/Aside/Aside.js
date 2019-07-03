@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const Aside = ({ filmData, getRandomFilm }) => {
   const randomNumber = Math.floor(Math.random() * 7)
