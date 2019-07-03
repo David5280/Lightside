@@ -7,11 +7,16 @@
   text-align: center;
   width: 250px;
   height: fit-content;
+  margin: 10px auto;
 }
 
 .info-card-header {
   display: flex;
   border-bottom: 2px dotted;
+}
+
+.bold {
+  font-weight: 800;
 }
 
 h3 {
