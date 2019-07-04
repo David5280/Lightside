@@ -40,8 +40,10 @@ const DataContainer = ({ peopleData, vehicleData, planetData }) => {
         />
     )
   });
+  const homeDisplay = <h2>Select a category above for more information!</h2>
   return (
     <section className='info-card-container'>
+      <Route exact path='/' render={() => homeDisplay} />
       <Route exact path='/people' render={() => allPeople} />
       <Route exact path='/planets' render={() => allPlanets} />
       <Route exact path='/vehicles' render={() => allVehicles} />
