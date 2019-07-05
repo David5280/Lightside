@@ -38,10 +38,18 @@ class App extends Component {
   render() {
     return (
       <main className="App">
+
         {(this.state.films.length && <Aside filmData={this.state.films} getRandomFilm={this.getRandomFilm}/>)}
         <section className='app-right-side'>
           <Header />
           <NavBar />
+          {(
+          (!this.state.people.length && !this.state.vehicles.length && !this.state.planets.length && !this.state.films.length) && 
+          <div className='loading-container'>
+            <img className='loadingGif' src='https://i.ya-webdesign.com/images/c3po-vector-gif-animation-6.gif' alt='r2d2' 
+            />
+          </div>
+          )}
           {(
             (this.state.people.length && this.state.vehicles.length && this.state.planets.length) && 
           <DataContainer 

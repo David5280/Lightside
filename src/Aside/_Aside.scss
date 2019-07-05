@@ -6,6 +6,7 @@ aside {
   min-width: 200px;
   background-color: rgba(241, 241, 241, .5);
   font-size: 18px;
+  overflow: hidden;
 }
 
 .aside-film-date,
@@ -16,4 +17,17 @@ aside {
   letter-spacing: 1px;
   color: #ffd700;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  perspective: 400px;
+  line-height: 120%;
+    /* Position the element so we can adjust the top property in the animation */
+    // position: relative;
+    /* Making sure the text is fully off the screen at the start and end of the animation */
+    /* Defines the skew origin at the very center when we apply transforms on the animation */
+    // transform-origin: 50% 100%;
+      /* Position the element so we can adjust the top property in the animation */
+  position: relative;
+  /* Defines the skew origin at the very center when we apply transforms on the animation */
+  transform-origin: 50% 100%;
+  /* Adds the crawl animation, which plays for one minute */
+  animation: crawl 60s linear;
 }
