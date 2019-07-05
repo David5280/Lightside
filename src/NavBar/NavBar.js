@@ -4,26 +4,26 @@ import { NavLink } from 'react-router-dom';
 const NavBar = () => {
   return(
     <nav>
-      <NavLink to='/people' className='navlink'>
-        <button 
+      <NavLink 
+        to='/people' 
         className='navbar-btn'
-        name='allPeople'>
-          People
-        </button>
+        activeClassName='activated'
+        >
+        People
       </NavLink>
-      <NavLink to='/planets' className='navlink'>
-        <button 
-        className='navbar-btn'
-        name='allPlanets'>
-          Planets
-        </button>
+      <NavLink 
+      to='/planets' 
+      className='navbar-btn'
+      activeClassName='activated'
+      >
+        Planets
       </NavLink>
-      <NavLink to='/vehicles' className='navlink'>
-        <button 
-        className='navbar-btn'
-        name='allVehicles'>
-          Vehicles
-        </button>
+      <NavLink 
+      to='/vehicles' 
+      className='navbar-btn'
+      activeClassName='activated'
+      >
+        Vehicles
       </NavLink>
     </nav>
   )

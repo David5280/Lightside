@@ -5,6 +5,17 @@ nav {
 }
 
 .navbar-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
   width: 150px;
   height: 35px;
+  border: 2px solid white;
+  background-color: grey;
+}
+
+.activated {
+  background-color: #000000;
 }
