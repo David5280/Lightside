@@ -1,33 +1,26 @@
 aside {
+  background-color: rgba(241, 241, 241, .5);
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 25%;
-  min-width: 200px;
-  background-color: rgba(241, 241, 241, .5);
   font-size: 18px;
+  height: 100vh;
+  min-width: 200px;
   overflow: hidden;
+  width: 25%;
 }
 
 .aside-film-date,
 .aside-film-title,
 .aside-opening-crawl {
-  margin: 25px;
+  animation: crawl 30s linear;
+  color: #ffd700;
   font-family: 'STARWARS';
   letter-spacing: 1px;
-  color: #ffd700;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  line-height: 100%;
+  margin: 25px;
   perspective: 400px;
-  line-height: 120%;
-    /* Position the element so we can adjust the top property in the animation */
-    // position: relative;
-    /* Making sure the text is fully off the screen at the start and end of the animation */
-    /* Defines the skew origin at the very center when we apply transforms on the animation */
-    // transform-origin: 50% 100%;
-      /* Position the element so we can adjust the top property in the animation */
   position: relative;
-  /* Defines the skew origin at the very center when we apply transforms on the animation */
+  text-align: center;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   transform-origin: 50% 100%;
-  /* Adds the crawl animation, which plays for one minute */
-  animation: crawl 60s linear;
 }

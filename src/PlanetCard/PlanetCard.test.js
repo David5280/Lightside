@@ -1,16 +1,15 @@
 import React from 'react';
-import PeopleCard from './PeopleCard/'
+import PlanetCard from './PlanetCard/'
 import { shallow, mount } from 'enzyme';
 
-describe('PeopleCard', () => {
+describe('PlanetCard', () => {
   it('should match the snapshot', () => {
     const wrapper = shallow(
-      <PeopleCard 
-      personName='Obi Wan'
-      birthYear='1994'
-      gender='male'
-      height='10cm'
-      eyeColor='red'
+      <PlanetCard 
+      planetName='earth'
+      terrain='wet'
+      diameter='10 feet'
+      population='1'
       />
     )
     expect(wrapper).toMatchSnapshot();

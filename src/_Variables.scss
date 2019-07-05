@@ -12,18 +12,11 @@ $accentColor: #381010;
   url("//db.onlinewebfonts.com/t/c00548f5d217ed324ae9096051927001.svg#STARWARS") format("svg");
 }
 
-/* We're calling this animation "crawl" */
 @keyframes crawl {
   0% {
-    /* The element starts below the screen */
-    top: 900px;
-    /* Rotate the text 20 degrees but keep it close to the viewer */
-    // transform: rotateX(30deg) translateZ(0);
+    top: 100vh;
   }
   100% { 
-    /* This is a magic number, but using a big one to make sure the text is fully off the screen at the end */
-    top: -1100px;
-    /* Slightly increasing the rotation at the end and moving the text far away from the viewer */
-    transform: rotateX(25deg) translateZ(-2500px);
+    top: 0px;
   }
 }
