@@ -1,14 +1,11 @@
 import React from 'react';
-import Aside from './Aside/';
-import filmData from '../mockData/filmData';
+import NavBar from './NavBar/'
 import { shallow, mount } from 'enzyme';
 
-describe('Aside', () => {
+describe('NavBar', () => {
   it('should match the snapshot', () => {
     const wrapper = shallow(
-      <Aside 
-        filmData={filmData.results}
-      />
+      <NavBar />
     )
     expect(wrapper).toMatchSnapshot();
   })

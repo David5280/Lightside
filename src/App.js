@@ -3,6 +3,7 @@ import Header from './Header/Header';
 import Aside from './Aside/Aside';
 import NavBar from './NavBar/NavBar';
 import DataContainer from './DataContainer/DataContainer';
+import loadingGif from './images/r2d2loading.gif';
 // import peopleData from './mockData/peopleData';
 // import filmData from './mockData/filmData';
 // import vehiclesData from "./mockData/vehiclesData";
@@ -38,10 +39,22 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        {(this.state.films.length && <Aside filmData={this.state.films} getRandomFilm={this.getRandomFilm}/>)}
+      {(this.state.films.length && <Aside filmData={this.state.films} getRandomFilm={this.getRandomFilm}/>)}
+
         <section className='app-right-side'>
+
           <Header />
+
           <NavBar />
+
+          {(
+          (!this.state.people.length && !this.state.vehicles.length && !this.state.planets.length && !this.state.films.length) && 
+          <div className='loading-container'>
+            <img className='loadingGif' src={loadingGif} alt='r2d2' 
+            />
+          </div>
+          )}
+
           {(
             (this.state.people.length && this.state.vehicles.length && this.state.planets.length) && 
           <DataContainer 
@@ -50,17 +63,12 @@ class App extends Component {
             planetData={this.state.planets}
             />
             )}
+
         </section>
+        
       </main>
     );
   }
 }
 
 export default App;
-
-
-
-// get random crawl
-  // const randomNumber = Math.floor(Math.random() * 7)
-  // const randomOpener = filmData.results.splice(randomNumber, 1)[0].opening_crawl
-  // this.setState({ openingCrawl: randomOpener })
