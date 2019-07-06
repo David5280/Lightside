@@ -17,6 +17,11 @@ nav {
   width: 150px;
 }
 
+.nav-icon {
+  width: 30px;
+  margin: 0px 10px;
+}
+
 .activated {
-  background-color: #000000;
+  background-color: $primaryColor;
 }

@@ -3,6 +3,7 @@ import Header from './Header/Header';
 import Aside from './Aside/Aside';
 import NavBar from './NavBar/NavBar';
 import DataContainer from './DataContainer/DataContainer';
+import loadingGif from './images/r2d2loading.gif';
 // import peopleData from './mockData/peopleData';
 // import filmData from './mockData/filmData';
 // import vehiclesData from "./mockData/vehiclesData";
@@ -49,7 +50,7 @@ class App extends Component {
           {(
           (!this.state.people.length && !this.state.vehicles.length && !this.state.planets.length && !this.state.films.length) && 
           <div className='loading-container'>
-            <img className='loadingGif' src='https://i.ya-webdesign.com/images/c3po-vector-gif-animation-6.gif' alt='r2d2' 
+            <img className='loadingGif' src={loadingGif} alt='r2d2' 
             />
           </div>
           )}
