@@ -3,10 +3,11 @@ import { Route } from 'react-router-dom';
 import PeopleCard from '../PeopleCard/PeopleCard';
 import PlanetCard from '../PlanetCard/PlanetCard';
 import VehicleCard from '../VehicleCard/VehicleCard';
+import PersonDetails from '../PersonDetails/PersonDetails';
 
 
 const DataContainer = ({ peopleData, vehicleData, planetData }) => {
-  const allPeople = peopleData.map(person => {
+  const allPeople = peopleData.map((person, i) => {
     return (
     <PeopleCard 
       personName={person.name}
@@ -14,7 +15,8 @@ const DataContainer = ({ peopleData, vehicleData, planetData }) => {
       gender={person.gender}
       height={person.height}
       eyeColor={person.eye_color}
-      key={person.created}
+      key={i}
+      id={i+1}
       /> 
       )
   });
@@ -47,6 +49,15 @@ const DataContainer = ({ peopleData, vehicleData, planetData }) => {
       <Route exact path='/people' render={() => allPeople} />
       <Route exact path='/planets' render={() => allPlanets} />
       <Route exact path='/vehicles' render={() => allVehicles} />
+      <Route path='/people/:id' render={({ match }) => {
+          console.log(match)
+          const { id } = match.params;
+          console.log(id);
+          const personFocus = peopleData[id-1]
+          console.log(personFocus)
+          return personFocus && <PersonDetails {...personFocus} />
+        }}
+        />
     </section>
   )
 }

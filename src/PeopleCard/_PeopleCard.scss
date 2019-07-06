@@ -8,6 +8,7 @@
   width: 250px;
   height: fit-content;
   margin: 10px auto;
+  color: black;
 }
 
 .info-card-header {
@@ -21,6 +22,10 @@
 
 h3 {
   margin: 5px auto;
+}
+
+.person-card-link {
+  text-decoration: none;
 }
 
 
