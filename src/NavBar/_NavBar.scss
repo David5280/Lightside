@@ -5,15 +5,16 @@ nav {
 }
 
 .navbar-btn {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  text-decoration: none;
-  color: white;
-  width: 150px;
-  height: 35px;
-  border: 2px solid white;
   background-color: grey;
+  border: 2px solid white;
+  color: white;
+  display: flex;
+  font-family: 'STARWARS';
+  height: 35px;
+  justify-content: center;
+  text-decoration: none;
+  width: 150px;
 }
 
 .activated {

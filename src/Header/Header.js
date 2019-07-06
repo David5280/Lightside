@@ -1,10 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <header className='app-header'>
       <h1>LIGHT<span className='header-accent-color'>SIDE</span></h1>
-      <button className='header-favorite-btn'>Favorites</button>
+      <Link to='/' className='header-btn home-btn'>Home</Link>
+      <Link to='/favorites' className='header-btn fav-btn'>Favorites</Link>
     </header>
   )
 }
