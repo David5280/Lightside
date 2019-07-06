@@ -6,6 +6,11 @@ import VehicleCard from '../VehicleCard/VehicleCard';
 import PersonDetails from '../PersonDetails/PersonDetails';
 import PlanetDetails from '../PlanetDetails/PlanetDetails';
 import VehicleDetails from '../VehicleDetails/VehicleDetails';
+import homeimg1 from '../images/death-star.png';
+import homeimg2 from '../images/millennium-falcon.png';
+import homeimg3 from '../images/rebel-alliance.png';
+import homeimg4 from '../images/weird-r2d2.png';
+
 
 
 const DataContainer = ({ peopleData, vehicleData, planetData }) => {
@@ -46,7 +51,13 @@ const DataContainer = ({ peopleData, vehicleData, planetData }) => {
         />
     )
   });
-  const homeDisplay = <h2>Select a category above for more information!</h2>
+  const randomIndex = Math.floor(Math.random() * 4)
+  const images = [homeimg1, homeimg2, homeimg3, homeimg4]
+  const homeDisplay = 
+    <div className='home-prompt'>
+      <h2>Select a category above for more information!</h2>
+      <img src={images[randomIndex]} className='home-icon' alt='star-wars-icon' />
+    </div>
   return (
     <section className='info-card-container'>
       <Route exact path='/' render={() => homeDisplay} />
