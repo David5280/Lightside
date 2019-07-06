@@ -3,8 +3,9 @@ aside {
   display: flex;
   flex-direction: column;
   font-size: 18px;
-  height: 100vh;
-  min-width: 200px;
+  height: 95.31vh;
+  min-width: 20%;
+  max-width: 25%;
   overflow: hidden;
   width: 25%;
 }
@@ -12,15 +13,25 @@ aside {
 .aside-film-date,
 .aside-film-title,
 .aside-opening-crawl {
-  animation: crawl 30s linear;
+  animation: crawl 20s linear;
   color: #ffd700;
   font-family: 'STARWARS';
   letter-spacing: 1px;
   line-height: 100%;
-  margin: 25px;
+  margin: 10px;
   perspective: 400px;
   position: relative;
   text-align: center;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   transform-origin: 50% 100%;
+}
+
+.aside-opening-crawl {
+  border-bottom: 2px solid;
+  padding-bottom: 20px;
+}
+
+.aside-film-date,
+.aside-film-title {
+  margin: 5px;
 }
