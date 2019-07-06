@@ -4,6 +4,8 @@ import PeopleCard from '../PeopleCard/PeopleCard';
 import PlanetCard from '../PlanetCard/PlanetCard';
 import VehicleCard from '../VehicleCard/VehicleCard';
 import PersonDetails from '../PersonDetails/PersonDetails';
+import PlanetDetails from '../PlanetDetails/PlanetDetails';
+import VehicleDetails from '../VehicleDetails/VehicleDetails';
 
 
 const DataContainer = ({ peopleData, vehicleData, planetData }) => {
@@ -15,30 +17,32 @@ const DataContainer = ({ peopleData, vehicleData, planetData }) => {
       gender={person.gender}
       height={person.height}
       eyeColor={person.eye_color}
-      key={i}
+      key={i+1}
       id={i+1}
       /> 
       )
   });
-  const allPlanets = planetData.map(planet => {
+  const allPlanets = planetData.map((planet, i) => {
     return(
       <PlanetCard
         planetName={planet.name}
         terrain={planet.terrain}
         diameter={planet.diameter}
         population={planet.population}
-        key={planet.created}
+        key={i+1}
+        id={i+1}
         />
     )
   });
-  const allVehicles = vehicleData.map(vehicle => {
+  const allVehicles = vehicleData.map((vehicle, i) => {
     return(
       <VehicleCard
         vehicleName={vehicle.name}
         model={vehicle.model}
         vehicleClass={vehicle.vehicle_class}
         passengers={vehicle.passengers}
-        key={vehicle.created}
+        key={i+1}
+        id={i+1}
         />
     )
   });
@@ -50,12 +54,21 @@ const DataContainer = ({ peopleData, vehicleData, planetData }) => {
       <Route exact path='/planets' render={() => allPlanets} />
       <Route exact path='/vehicles' render={() => allVehicles} />
       <Route path='/people/:id' render={({ match }) => {
-          console.log(match)
           const { id } = match.params;
-          console.log(id);
           const personFocus = peopleData[id-1]
-          console.log(personFocus)
           return personFocus && <PersonDetails {...personFocus} />
+        }}
+        />
+      <Route path='/planets/:id' render={({ match }) => {
+          const { id } = match.params;
+          const planetFocus = planetData[id-1]
+          return planetFocus && <PlanetDetails {...planetFocus} />
+        }}
+        />
+      <Route path='/vehicles/:id' render={({ match }) => {
+          const { id } = match.params;
+          const vehicleFocus = vehicleData[id-1]
+          return vehicleFocus && <VehicleDetails {...vehicleFocus} />
         }}
         />
     </section>

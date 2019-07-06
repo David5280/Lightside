@@ -1,13 +1,15 @@
-.person-detail-card {
+.detail-card {
   border: 2px solid black;
+  color: black;
   background-color: #fff;
   padding: 5px;
+  width: 25%;
 }
 
-.person-detail-header {
+.detail-header {
   display: flex;
   align-items: center;
-  border-bottom: 1px dotted white;
+  border-bottom: 1px dotted black;
 }
 
 .back-btn {
@@ -16,4 +18,5 @@
   color: black;
   height: 100%;
   margin: 0px 5px;
+  text-decoration: none;
 }

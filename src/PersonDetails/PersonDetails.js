@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const PersonDetails = (props) => {
   console.log(props);
   return(
-    <article className='person-detail-card'>
-      <header className='person-detail-header'>
-      <h3>Name:  {props.name}</h3>
-      <Link to='/people' className='back-btn'>◀</Link>
+    <article className='detail-card'>
+      <header className='detail-header'>
+        <h3>Name:  {props.name}</h3>
+        <Link to='/people' className='back-btn'>◀</Link>
       </header>
       <p>Birthyear: <span className='bold'>{props.birth_year}</span></p>
       <p>Gender: <span className='bold'>{props.gender}</span></p>
