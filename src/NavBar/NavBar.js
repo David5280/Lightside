@@ -16,17 +16,17 @@ const NavBar = () => {
         <img src={r2d2} alt='r2d2' className='nav-icon'/>
       </NavLink>
       <NavLink 
-      to='/planets' 
-      className='navbar-btn'
-      activeClassName='activated'
+        to='/planets' 
+        className='navbar-btn'
+        activeClassName='activated'
       >
         Planets
         <img src={planet} alt='planet' className='nav-icon'/>
       </NavLink>
       <NavLink 
-      to='/vehicles' 
-      className='navbar-btn'
-      activeClassName='activated'
+        to='/vehicles' 
+        className='navbar-btn'
+        activeClassName='activated'
       >
         Vehicles
         <img src={ship} alt='space-ship' className='nav-icon'/>

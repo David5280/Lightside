@@ -3,12 +3,12 @@ import { NavLink } from 'react-router-dom';
 
 
 const PeopleCard = (props) => {
-    const { personName, birthyear, gender, height, eyeColor } = props;
+    const { personName, birthyear, gender, height, eyeColor, favoriteCard } = props;
     const peopleCard = (
       <article className='info-card'>
         <header className='info-card-header'>
           <h3>{personName}</h3>
-          <button>Favorite</button>
+          <button onClick={() => favoriteCard(personName, "people")}>Favorite</button>
         </header>
         <NavLink to={`/people/${props.id}`} className='person-card-link'>
           <p>Birthyear: <span className='bold'>{birthyear}</span></p>
