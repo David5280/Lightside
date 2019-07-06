@@ -1,6 +1,6 @@
-$primaryColor: #0F1288;
-$secondaryColor: #334e30;
-$tertiaryColor: #ad7d37;
+$primaryColor: rgba(241, 241, 241, .3);
+$secondaryColor: rgb(0, 3, 184);
+$crawlColor: #ffd700;
 $accentColor: #381010;
 
 @font-face {font-family: "STARWARS";
@@ -10,4 +10,13 @@ $accentColor: #381010;
   url("//db.onlinewebfonts.com/t/c00548f5d217ed324ae9096051927001.woff") format("woff"),
   url("//db.onlinewebfonts.com/t/c00548f5d217ed324ae9096051927001.ttf") format("truetype"),
   url("//db.onlinewebfonts.com/t/c00548f5d217ed324ae9096051927001.svg#STARWARS") format("svg");
+}
+
+@keyframes crawl {
+  0% {
+    top: 100vh;
+  }
+  100% { 
+    top: 0px;
+  }
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 
 const VehicleCard = (props) => {
   const { vehicleName, model, vehicleClass, passengers } = props;
@@ -8,10 +9,11 @@ const VehicleCard = (props) => {
       <h3>{vehicleName}</h3>
       <button>Favorite</button>
     </header>
-    <p>Name: <span className='bold'>{vehicleName}</span></p>
-    <p>Model: <span className='bold'>{model}</span></p>
-    <p>Class: <span className='bold'>{vehicleClass}</span></p>
-    <p>Passengers: <span className='bold'>{passengers}</span></p>
+    <NavLink to={`/vehicles/${props.id}`} className='vehicle-card-link'>
+      <p>Model: <span className='bold'>{model}</span></p>
+      <p>Class: <span className='bold'>{vehicleClass}</span></p>
+      <p>Passengers: <span className='bold'>{passengers}</span></p>
+    </NavLink>
   </article>
   )
   return (
