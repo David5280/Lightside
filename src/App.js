@@ -49,8 +49,17 @@ class App extends Component {
   }
 
   findTargetCard = (name, data) => {
-    const targetCard = data.findIndex(card => card.name === name);
-    this.setState({ favorites: [...this.state.favorites, data[targetCard]] });
+    const targetCardIndex = data.findIndex(card => card.name === name);
+    const targetCard = data[targetCardIndex];
+    console.log(targetCard);
+    if (this.state.favorites.includes(targetCard)) {
+      const updatedFavorites = this.state.favorites.filter(favorite => {
+        return favorite !== targetCard;
+      })
+      this.setState({ favorites: updatedFavorites })
+    } else {
+      this.setState({ favorites: [...this.state.favorites, targetCard] });
+    }
   }
 
   render() {
