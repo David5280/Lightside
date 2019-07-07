@@ -93,6 +93,7 @@ const DataContainer = ({ peopleData, vehicleData, planetData, favorites, favorit
     }
   });
 
+  const noFavoritesMsg = <div><h2>there are no favorites</h2></div>
   const randomIndex = Math.floor(Math.random() * 4)
   const images = [homeimg1, homeimg2, homeimg3, homeimg4]
   const homeDisplay = 
@@ -106,7 +107,13 @@ const DataContainer = ({ peopleData, vehicleData, planetData, favorites, favorit
       <Route exact path='/people' render={() => allPeople} />
       <Route exact path='/planets' render={() => allPlanets} />
       <Route exact path='/vehicles' render={() => allVehicles} />
-      <Route exact path='/favorites' render={() => allFavorites} />
+      
+      
+      {/* {(!favorites.length) && <Route exact path='/favorites' render={() => noFavoritesMsg} />} */}
+      
+      {(favorites.length) && <Route exact path='/favorites' render={() => allFavorites} />}
+      
+      
       <Route path='/people/:id' render={({ match }) => {
           const { id } = match.params;
           const personFocus = peopleData[id-1]

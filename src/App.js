@@ -20,6 +20,7 @@ class App extends Component {
       planets: [],
       error: undefined,
       favorites: [],
+      randomFilm: undefined
     }
   }
   
@@ -62,6 +63,12 @@ class App extends Component {
     }
   }
 
+  getRandomFilm = (filmData) => {
+    const randomNumber = Math.floor(Math.random() * 7);
+    const randomFilm = filmData.slice().splice(randomNumber, 1);
+    return randomFilm;
+  }
+
   render() {
     return (
       <main className="App">
@@ -69,7 +76,7 @@ class App extends Component {
 
         <section className='app-right-side'>
 
-          <Header />
+          <Header favoritesLength={this.state.favorites.length}/>
 
           <NavBar />
 
