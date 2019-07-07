@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const PlanetDetails = (props) => {
-  console.log(props);
   return(
     <article className='detail-card'>
       <header className='detail-header'>

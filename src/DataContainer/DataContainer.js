@@ -11,10 +11,7 @@ import homeimg2 from '../images/millennium-falcon.png';
 import homeimg3 from '../images/rebel-alliance.png';
 import homeimg4 from '../images/weird-r2d2.png';
 
-
-
 const DataContainer = ({ peopleData, vehicleData, planetData, favorites, favoriteCard }) => {
-  
   const allPeople = peopleData.map((person, i) => {
     return (
     <PeopleCard 
@@ -92,8 +89,11 @@ const DataContainer = ({ peopleData, vehicleData, planetData, favorites, favorit
       /> 
     }
   });
+  const noFavoritesMsg = <h2>You haven't added any favorites yet!</h2>
+  const favDisplay = (favorites) => {
+    return favorites.length ? allFavorites : noFavoritesMsg;
+  }
 
-  const noFavoritesMsg = <div><h2>there are no favorites</h2></div>
   const randomIndex = Math.floor(Math.random() * 4)
   const images = [homeimg1, homeimg2, homeimg3, homeimg4]
   const homeDisplay = 
@@ -101,19 +101,14 @@ const DataContainer = ({ peopleData, vehicleData, planetData, favorites, favorit
       <h2>Select a category above for more information!</h2>
       <img src={images[randomIndex]} className='home-icon' alt='star-wars-icon' />
     </div>
+    
   return (
     <section className='info-card-container'>
       <Route exact path='/' render={() => homeDisplay} />
       <Route exact path='/people' render={() => allPeople} />
       <Route exact path='/planets' render={() => allPlanets} />
       <Route exact path='/vehicles' render={() => allVehicles} />
-      
-      
-      {/* {(!favorites.length) && <Route exact path='/favorites' render={() => noFavoritesMsg} />} */}
-      
-      {(favorites.length) && <Route exact path='/favorites' render={() => allFavorites} />}
-      
-      
+      <Route exact path='/favorites' render={() => favDisplay(favorites)} />
       <Route path='/people/:id' render={({ match }) => {
           const { id } = match.params;
           const personFocus = peopleData[id-1]
