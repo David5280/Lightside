@@ -4,6 +4,7 @@ import Aside from './Aside/Aside';
 import NavBar from './NavBar/NavBar';
 import DataContainer from './DataContainer/DataContainer';
 import loadingGif from './images/r2d2loading.gif';
+import fetchData from './apicalls/apicalls';
 // import { threadId } from 'worker_threads';
 // import peopleData from './mockData/peopleData';
 // import filmData from './mockData/filmData';
@@ -25,18 +26,10 @@ class App extends Component {
   }
   
   componentDidMount() {
-    this.fetchData('films');
-    this.fetchData('people');
-    this.fetchData('planets');
-    this.fetchData('vehicles');
-  }
-
-  fetchData = (string) => {
-    const data = fetch(`https://swapi.co/api/${string}/`)
-      .then(res => res.json())
-      .then(data => this.setState({ [string]: data.results }))
-      .catch(error => this.setState({ error: error }));
-      return data
+    fetchData('films', this);
+    fetchData('people', this);
+    fetchData('planets', this);
+    fetchData('vehicles', this);
   }
 
   favoriteCard = (name, cardType) => {
