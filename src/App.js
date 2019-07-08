@@ -65,7 +65,12 @@ class App extends Component {
   getRandomFilm = (filmData) => {
     const randomNumber = Math.floor(Math.random() * 7);
     const randomFilm = filmData.slice().splice(randomNumber, 1);
-    return randomFilm;
+    if (this.state.randomFilm === undefined) {
+      this.setState({ randomFilm: randomFilm });
+      return randomFilm;
+    } else {
+      return this.state.randomFilm;
+    }
   }
 
   render() {
