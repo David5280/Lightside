@@ -2,12 +2,12 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const PlanetCard = (props) => {
-  const { planetName, terrain, diameter, population } = props;
+  const { planetName, terrain, diameter, population, favoriteCard } = props;
   const planetCard = (
   <article className='info-card'>
     <header className='info-card-header'>
       <h3>{planetName}</h3>
-      <button>Favorite</button>
+      <button onClick={() => favoriteCard(planetName, "planets")}>Favorite</button>
     </header>
     <NavLink to={`/planets/${props.id}`} className='planet-card-link'>
       <p>Terrain: <span className='bold'>{terrain}</span></p>

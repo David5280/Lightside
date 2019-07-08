@@ -4,6 +4,7 @@ import Aside from './Aside/Aside';
 import NavBar from './NavBar/NavBar';
 import DataContainer from './DataContainer/DataContainer';
 import loadingGif from './images/r2d2loading.gif';
+// import { threadId } from 'worker_threads';
 // import peopleData from './mockData/peopleData';
 // import filmData from './mockData/filmData';
 // import vehiclesData from "./mockData/vehiclesData";
@@ -17,7 +18,9 @@ class App extends Component {
       films: [],
       vehicles: [],
       planets: [],
-      error: undefined
+      error: undefined,
+      favorites: [],
+      randomFilm: undefined
     }
   }
   
@@ -36,6 +39,35 @@ class App extends Component {
       return data
   }
 
+  favoriteCard = (name, cardType) => {
+    if (cardType === 'people') {
+      this.findTargetCard(name, this.state.people);
+    } else if (cardType === 'planets') {
+      this.findTargetCard(name, this.state.planets);
+    } else {
+      this.findTargetCard(name, this.state.vehicles);
+    }
+  }
+
+  findTargetCard = (name, data) => {
+    const targetCardIndex = data.findIndex(card => card.name === name);
+    const targetCard = data[targetCardIndex];
+    if (this.state.favorites.includes(targetCard)) {
+      const updatedFavorites = this.state.favorites.filter(favorite => {
+        return favorite !== targetCard;
+      })
+      this.setState({ favorites: updatedFavorites })
+    } else {
+      this.setState({ favorites: [...this.state.favorites, targetCard] });
+    }
+  }
+
+  getRandomFilm = (filmData) => {
+    const randomNumber = Math.floor(Math.random() * 7);
+    const randomFilm = filmData.slice().splice(randomNumber, 1);
+    return randomFilm;
+  }
+
   render() {
     return (
       <main className="App">
@@ -43,7 +75,7 @@ class App extends Component {
 
         <section className='app-right-side'>
 
-          <Header />
+          <Header favoritesLength={this.state.favorites.length}/>
 
           <NavBar />
 
@@ -61,8 +93,10 @@ class App extends Component {
             peopleData={this.state.people} 
             vehicleData={this.state.vehicles} 
             planetData={this.state.planets}
-            />
-            )}
+            favorites={this.state.favorites}
+            favoriteCard={this.favoriteCard}
+          />
+          )}
 
         </section>
         

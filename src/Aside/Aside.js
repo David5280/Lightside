@@ -1,8 +1,7 @@
 import React from 'react';
 
 const Aside = ({ filmData, getRandomFilm }) => {
-  const randomNumber = Math.floor(Math.random() * 7)
-  const randomFilm = filmData.slice().splice(randomNumber, 1);
+  const randomFilm = getRandomFilm(filmData);
   return (
     <aside>
       <p className='aside-opening-crawl'>{randomFilm[0].opening_crawl}</p> 

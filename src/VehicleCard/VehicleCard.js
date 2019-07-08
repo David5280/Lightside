@@ -2,12 +2,12 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 
 const VehicleCard = (props) => {
-  const { vehicleName, model, vehicleClass, passengers } = props;
+  const { vehicleName, model, vehicleClass, passengers, favoriteCard } = props;
   const vehicleCard = (
   <article className='info-card'>
     <header className='info-card-header'>
       <h3>{vehicleName}</h3>
-      <button>Favorite</button>
+        <button onClick={() => favoriteCard(vehicleName, "vehicles")}>Favorite</button>
     </header>
     <NavLink to={`/vehicles/${props.id}`} className='vehicle-card-link'>
       <p>Model: <span className='bold'>{model}</span></p>
