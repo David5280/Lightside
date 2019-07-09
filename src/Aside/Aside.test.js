@@ -8,7 +8,8 @@ describe('Aside', () => {
     const wrapper = shallow(
       <Aside 
         filmData={filmData.results}
-      />
+        getRandomFilm={jest.fn()}
+        />
     )
     expect(wrapper).toMatchSnapshot();
   })

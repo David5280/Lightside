@@ -17,7 +17,7 @@ const DataContainer = ({ peopleData, vehicleData, planetData, favorites, favorit
     return (
     <PeopleCard 
       personName={person.name}
-      birthyear={person.birth_year}
+      birthYear={person.birth_year}
       gender={person.gender}
       height={person.height}
       eyeColor={person.eye_color}

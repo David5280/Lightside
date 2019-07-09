@@ -6,6 +6,7 @@ import vehiclesData from '../mockData/vehiclesData';
 import planetsData from '../mockData/planetsData';
 
 
+
 describe('DataContainer', () => {
   it('should match the snapshot', () => {
     const wrapper = shallow(
@@ -13,6 +14,8 @@ describe('DataContainer', () => {
       peopleData={peopleData.results} 
       vehicleData={vehiclesData.results} 
       planetData={planetsData.results}
+      favorites={[]}
+      favoriteCard={jest.fn()}
       />
     )
     expect(wrapper).toMatchSnapshot();

@@ -10,6 +10,8 @@ describe('PlanetCard', () => {
       terrain='wet'
       diameter='10 feet'
       population='1'
+      favoriteCard={jest.fn()}
+      isFavorite ={false}
       />
     )
     expect(wrapper).toMatchSnapshot();
