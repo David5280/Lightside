@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Aside = ({ filmData, getRandomFilm }) => {
   const randomFilm = getRandomFilm(filmData);
@@ -9,6 +10,11 @@ const Aside = ({ filmData, getRandomFilm }) => {
       <p className='aside-film-date'>{randomFilm[0].release_date}</p>
     </aside>
   )
+}
+
+Aside.propTypes = {
+  filmData: PropTypes.array.isRequired,
+  getRandomFilm: PropTypes.func.isRequired,
 }
 
 export default Aside;

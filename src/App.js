@@ -52,6 +52,7 @@ class App extends Component {
   findTargetCard = (name, data) => {
     const targetCardIndex = data.findIndex(card => card.name === name);
     const targetCard = data[targetCardIndex];
+    targetCard.isFavorite = !targetCard.isFavorite;
     if (this.state.favorites.includes(targetCard)) {
       const updatedFavorites = this.state.favorites.filter(favorite => {
         return favorite !== targetCard;
