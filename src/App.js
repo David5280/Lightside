@@ -4,8 +4,7 @@ import Aside from './Aside/Aside';
 import NavBar from './NavBar/NavBar';
 import DataContainer from './DataContainer/DataContainer';
 import loadingGif from './images/r2d2loading.gif';
-import fetchData from './apicalls/apicalls';
-// import { threadId } from 'worker_threads';
+import { fetchData } from './apicalls/apicalls';
 // import peopleData from './mockData/peopleData';
 // import filmData from './mockData/filmData';
 // import vehiclesData from "./mockData/vehiclesData";
@@ -26,10 +25,18 @@ class App extends Component {
   }
   
   componentDidMount() {
-    fetchData('films', this);
-    fetchData('people', this);
-    fetchData('planets', this);
-    fetchData('vehicles', this);
+    fetchData('films')
+      .then(results => this.setState({ films: results }))
+      .catch(error => this.setState({ error: error }));
+    fetchData('people')
+      .then(results => this.setState({ people: results }))
+      .catch(error => this.setState({ error: error }));
+    fetchData('planets')
+      .then(results => this.setState({ planets: results }))
+      .catch(error => this.setState({ error: error }));
+    fetchData('vehicles')
+      .then(results => this.setState({ vehicles: results }))
+      .catch(error => this.setState({ error: error }));
   }
 
   favoriteCard = (name, cardType) => {
@@ -45,6 +52,7 @@ class App extends Component {
   findTargetCard = (name, data) => {
     const targetCardIndex = data.findIndex(card => card.name === name);
     const targetCard = data[targetCardIndex];
+    targetCard.isFavorite = !targetCard.isFavorite;
     if (this.state.favorites.includes(targetCard)) {
       const updatedFavorites = this.state.favorites.filter(favorite => {
         return favorite !== targetCard;
