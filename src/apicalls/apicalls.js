@@ -1,10 +1,11 @@
-const fetchData = (string, context) => {
+import cleaner from './cleaner';
+
+export const fetchData = (string) => {
   const data = fetch(`https://swapi.co/api/${string}/`)
     .then(res => res.json())
     .then(data => data.results)
-    .then(results => context.setState({ [string]: results }))
-    .catch(error => context.setState({ error: error }));
+    .then(results => cleaner(results, string))
+    .catch(error => error.message);
+    
   return data
 }
-
-export default fetchData;
