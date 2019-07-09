@@ -1,8 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# LightSide
 
-In the project directory, you can run:
+## Summary
+
+LightSide is a Star Wars themed project that uses both React and React-Router to render a site about the Star Wars mythos. The project use the Star Wars API in order to fetch data and information about the movies and character in order to display them on the site in the form of cards. The site also allows for favoriting of card which you can access via a favorites button. 
 
 ### `npm start`
 
