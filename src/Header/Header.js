@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Header = ({ favoritesLength }) => {
   return (
@@ -9,6 +10,10 @@ const Header = ({ favoritesLength }) => {
       <Link to='/favorites' className='header-btn fav-btn'>Favorites <span className="fav-length">({favoritesLength})</span></Link>
     </header>
   )
+}
+
+Header.propTypes = {
+  favoritesLength: PropTypes.number.isRequired
 }
 
 export default Header;

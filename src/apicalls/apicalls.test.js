@@ -7,8 +7,8 @@ describe.only('fetchData', () => {
   beforeEach(() => {
     mockResponse = {
       results: [
-        { name: "Luke Skywalker", height: "172", mass: "77",},
-        { name: "some guy", height: "180", mass: "90", }
+        { name: 'name1', height: 'height1', birth_year: 'birth_year1', eye_color: 'eye_color1', gender: 'gender1', isFavorite: false },
+        { name: 'name2', height: 'height2', birth_year: 'birth_year2', eye_color: 'eye_color2', gender: 'gender2', isFavorite: false },
       ]
     }
     mockString = 'people';

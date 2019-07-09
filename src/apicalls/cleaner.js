@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const cleaner = (data, string) => {
   if (string === 'people') {
     return data.map(person => {
@@ -39,6 +41,11 @@ const cleaner = (data, string) => {
       }
     })
   }
+}
+
+cleaner.propTypes = {
+  data: PropTypes.array.isRequired,
+  string: PropTypes.string.isRequired
 }
 
 export default cleaner;

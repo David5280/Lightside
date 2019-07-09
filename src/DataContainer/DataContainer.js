@@ -6,6 +6,7 @@ import VehicleCard from '../VehicleCard/VehicleCard';
 import PersonDetails from '../PersonDetails/PersonDetails';
 import PlanetDetails from '../PlanetDetails/PlanetDetails';
 import VehicleDetails from '../VehicleDetails/VehicleDetails';
+import PropTypes from 'prop-types';
 import homeimg1 from '../images/death-star.png';
 import homeimg2 from '../images/millennium-falcon.png';
 import homeimg3 from '../images/rebel-alliance.png';
@@ -20,6 +21,7 @@ const DataContainer = ({ peopleData, vehicleData, planetData, favorites, favorit
       gender={person.gender}
       height={person.height}
       eyeColor={person.eye_color}
+      isFavorite={person.isFavorite}
       key={i+1}
       id={i+1}
       favoriteCard={favoriteCard}
@@ -34,6 +36,7 @@ const DataContainer = ({ peopleData, vehicleData, planetData, favorites, favorit
         terrain={planet.terrain}
         diameter={planet.diameter}
         population={planet.population}
+        isFavorite={planet.isFavorite}
         key={i+1}
         id={i+1}
         favoriteCard={favoriteCard}
@@ -48,6 +51,7 @@ const DataContainer = ({ peopleData, vehicleData, planetData, favorites, favorit
         model={vehicle.model}
         vehicleClass={vehicle.vehicle_class}
         passengers={vehicle.passengers}
+        isFavorite={vehicle.isFavorite}
         key={i+1}
         id={i+1}
         favoriteCard={favoriteCard}
@@ -62,6 +66,7 @@ const DataContainer = ({ peopleData, vehicleData, planetData, favorites, favorit
         model={favorite.model}
         vehicleClass={favorite.vehicle_class}
         passengers={favorite.passengers}
+        isFavorite={favorite.isFavorite}
         key={i+1}
         id={i+1}
         favoriteCard={favoriteCard}
@@ -72,6 +77,7 @@ const DataContainer = ({ peopleData, vehicleData, planetData, favorites, favorit
         terrain={favorite.terrain}
         diameter={favorite.diameter}
         population={favorite.population}
+        isFavorite={favorite.isFavorite}
         key={i+1}
         id={i+1}
         favoriteCard={favoriteCard}
@@ -83,6 +89,7 @@ const DataContainer = ({ peopleData, vehicleData, planetData, favorites, favorit
         gender={favorite.gender}
         height={favorite.height}
         eyeColor={favorite.eye_color}
+        isFavorite={favorite.isFavorite}
         key={i+1}
         id={i+1}
         favoriteCard={favoriteCard}
@@ -129,6 +136,14 @@ const DataContainer = ({ peopleData, vehicleData, planetData, favorites, favorit
         />
     </section>
   )
+}
+
+DataContainer.propTypes = {
+  peopleData: PropTypes.array.isRequired,
+  vehicleData: PropTypes.array.isRequired,
+  planetData: PropTypes.array.isRequired,
+  favorites: PropTypes.array.isRequired,
+  favoriteCard: PropTypes.func.isRequired
 }
 
 export default DataContainer;
