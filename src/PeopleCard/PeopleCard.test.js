@@ -3,7 +3,7 @@ import PeopleCard from './PeopleCard/'
 import { shallow, mount } from 'enzyme';
 
 describe('PeopleCard', () => {
-  it('should match the snapshot', () => {
+  it.only('should match the snapshot', () => {
     const wrapper = shallow(
       <PeopleCard 
       personName='Obi Wan'
@@ -11,6 +11,8 @@ describe('PeopleCard', () => {
       gender='male'
       height='10cm'
       eyeColor='red'
+      favoriteCard={jest.fn()}
+      isFavorite ={false}
       />
     )
     expect(wrapper).toMatchSnapshot();

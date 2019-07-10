@@ -29,12 +29,12 @@ const PeopleCard = (props) => {
 
 PeopleCard.propTypes = {
   personName: PropTypes.string.isRequired,
-  birthyear: PropTypes.string.isRequired,
+  birthYear: PropTypes.string.isRequired,
   gender: PropTypes.string.isRequired,
   height: PropTypes.string.isRequired,
   eyeColor: PropTypes.string.isRequired,
   favoriteCard: PropTypes.func.isRequired,
-  isFavorite: PropTypes.bool.isRequired
+  isFavorite: PropTypes.bool
 }
 
 export default PeopleCard;

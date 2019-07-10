@@ -86,15 +86,23 @@ class App extends Component {
           <NavBar />
 
           {(
-          (!this.state.people.length && !this.state.vehicles.length && !this.state.planets.length && !this.state.films.length) && 
+          (!this.state.people.length && 
+            !this.state.vehicles.length && 
+            !this.state.planets.length && 
+            !this.state.films.length) && 
           <div className='loading-container'>
-            <img className='loadingGif' src={loadingGif} alt='r2d2' 
-            />
+            <img 
+              className='loadingGif' 
+              src={loadingGif} 
+              alt='r2d2' 
+              />
           </div>
           )}
 
           {(
-            (this.state.people.length && this.state.vehicles.length && this.state.planets.length) && 
+            (this.state.people.length && 
+              this.state.vehicles.length && 
+              this.state.planets.length) && 
           <DataContainer 
             peopleData={this.state.people} 
             vehicleData={this.state.vehicles} 

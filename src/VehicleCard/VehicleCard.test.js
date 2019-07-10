@@ -10,6 +10,8 @@ describe('VehicleCard', () => {
       model='cool one'
       vehicleClass='cooooool one'
       passengers='100'
+      favoriteCard={jest.fn()}
+      isFavorite ={false}
       />
     )
     expect(wrapper).toMatchSnapshot();

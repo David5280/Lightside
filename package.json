@@ -10,7 +10,8 @@
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
-    "sass": "^1.22.2"
+    "sass": "^1.22.2",
+    "shortid": "^2.2.14"
   },
   "scripts": {
     "start": "react-scripts start",

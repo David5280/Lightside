@@ -11,91 +11,63 @@ import homeimg1 from '../images/death-star.png';
 import homeimg2 from '../images/millennium-falcon.png';
 import homeimg3 from '../images/rebel-alliance.png';
 import homeimg4 from '../images/weird-r2d2.png';
+const shortid = require('shortid');
 
 const DataContainer = ({ peopleData, vehicleData, planetData, favorites, favoriteCard }) => {
-  const allPeople = peopleData.map((person, i) => {
+  const generatePersonCard = (person) => {
     return (
-    <PeopleCard 
-      personName={person.name}
-      birthyear={person.birth_year}
-      gender={person.gender}
-      height={person.height}
-      eyeColor={person.eye_color}
-      isFavorite={person.isFavorite}
-      key={i+1}
-      id={i+1}
-      favoriteCard={favoriteCard}
-      /> 
-      )
-  });
-
-  const allPlanets = planetData.map((planet, i) => {
-    return(
+      <PeopleCard 
+        personName={person.name}
+        birthYear={person.birth_year}
+        gender={person.gender}
+        height={person.height}
+        eyeColor={person.eye_color}
+        isFavorite={person.isFavorite}
+        key={shortid.generate()}
+        id={person.id}
+        favoriteCard={favoriteCard}
+        /> 
+    )}
+  const allPeople = peopleData.map((person) => generatePersonCard(person));
+  const generatePlanetCard = (planet) => {
+    return (
       <PlanetCard
         planetName={planet.name}
         terrain={planet.terrain}
         diameter={planet.diameter}
         population={planet.population}
         isFavorite={planet.isFavorite}
-        key={i+1}
-        id={i+1}
+        key={shortid.generate()}
+        id={planet.id}
         favoriteCard={favoriteCard}
         />
-    )
-  });
-
-  const allVehicles = vehicleData.map((vehicle, i) => {
-    return(
-      <VehicleCard
-        vehicleName={vehicle.name}
-        model={vehicle.model}
-        vehicleClass={vehicle.vehicle_class}
-        passengers={vehicle.passengers}
-        isFavorite={vehicle.isFavorite}
-        key={i+1}
-        id={i+1}
-        favoriteCard={favoriteCard}
-        />
-    )
-  });
-
-  const allFavorites = favorites.map((favorite, i) => {
-    if (Object.keys(favorite).includes('model')) {
-      return (<VehicleCard
-        vehicleName={favorite.name}
-        model={favorite.model}
-        vehicleClass={favorite.vehicle_class}
-        passengers={favorite.passengers}
-        isFavorite={favorite.isFavorite}
-        key={i+1}
-        id={i+1}
-        favoriteCard={favoriteCard}
-      />)
-    } else if (Object.keys(favorite).includes('population')) {
-      return <PlanetCard
-        planetName={favorite.name}
-        terrain={favorite.terrain}
-        diameter={favorite.diameter}
-        population={favorite.population}
-        isFavorite={favorite.isFavorite}
-        key={i+1}
-        id={i+1}
-        favoriteCard={favoriteCard}
+    )}
+  const allPlanets = planetData.map((planet) => generatePlanetCard(planet));
+  const generateVehicleCard = (vehicle) => {
+    return (
+    <VehicleCard
+      vehicleName={vehicle.name}
+      model={vehicle.model}
+      vehicleClass={vehicle.vehicle_class}
+      passengers={vehicle.passengers}
+      isFavorite={vehicle.isFavorite}
+      key={shortid.generate()}
+      id={vehicle.id}
+      favoriteCard={favoriteCard}
       />
+    )}
+  const allVehicles = vehicleData.map(vehicle => generateVehicleCard(vehicle))
+  
+  const allFavorites = favorites.map(favorite => {
+    if (Object.keys(favorite).includes('model')) {
+      return generateVehicleCard(favorite)
+    } else if (Object.keys(favorite).includes('population')) {
+      return generatePlanetCard(favorite)
     } else {
-      return <PeopleCard
-        personName={favorite.name}
-        birthyear={favorite.birth_year}
-        gender={favorite.gender}
-        height={favorite.height}
-        eyeColor={favorite.eye_color}
-        isFavorite={favorite.isFavorite}
-        key={i+1}
-        id={i+1}
-        favoriteCard={favoriteCard}
-      /> 
+      return generatePersonCard(favorite)
     }
   });
+
   const noFavoritesMsg = <h2>You haven't added any favorites yet!</h2>
   const favDisplay = (favorites) => {
     return favorites.length ? allFavorites : noFavoritesMsg;
@@ -118,19 +90,19 @@ const DataContainer = ({ peopleData, vehicleData, planetData, favorites, favorit
       <Route exact path='/favorites' render={() => favDisplay(favorites)} />
       <Route path='/people/:id' render={({ match }) => {
           const { id } = match.params;
-          const personFocus = peopleData[id-1]
+          const personFocus = peopleData.find(person => person.id === id);
           return personFocus && <PersonDetails {...personFocus} />
         }}
         />
       <Route path='/planets/:id' render={({ match }) => {
           const { id } = match.params;
-          const planetFocus = planetData[id-1]
+          const planetFocus = planetData.find(planet => planet.id === id);
           return planetFocus && <PlanetDetails {...planetFocus} />
         }}
         />
       <Route path='/vehicles/:id' render={({ match }) => {
           const { id } = match.params;
-          const vehicleFocus = vehicleData[id-1]
+          const vehicleFocus = vehicleData.find(vehicle => vehicle.id === id)
           return vehicleFocus && <VehicleDetails {...vehicleFocus} />
         }}
         />

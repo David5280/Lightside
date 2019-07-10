@@ -5,7 +5,9 @@ import {shallow, mount} from 'enzyme';
 describe('Header', () => {
   it('should match the snapshot', () => {
     const wrapper = shallow(
-      <Header />
+      <Header 
+        favoritesLength = {2}
+        />
     );
     expect(wrapper).toMatchSnapshot();
   });
