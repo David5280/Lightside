@@ -23,11 +23,11 @@ LightSide is a Star Wars themed project that uses React and React-Router to rend
 
 ##  Installation
 
--clone this repo to your local machine
--run npm install to download all necessay dependencies
--run npm start to run the server
--open localhost:3000 (unless your terminal says otherwise)
--experiment with the different functionalities & learn about the dark side
+1.  clone this repo to your local machine
+2.  run npm install to download all necessay dependencies
+3.  run npm start to run the server
+4.  open localhost:3000 (unless your terminal says otherwise)
+5.  experiment with the different functionalities & learn about the dark side
 
 ###  Screenshots
 
