@@ -5,10 +5,6 @@ import NavBar from './NavBar/NavBar';
 import DataContainer from './DataContainer/DataContainer';
 import loadingGif from './images/r2d2loading.gif';
 import { fetchData } from './apicalls/apicalls';
-// import peopleData from './mockData/peopleData';
-// import filmData from './mockData/filmData';
-// import vehiclesData from "./mockData/vehiclesData";
-// import planetsData from './mockData/planetsData';
 
 class App extends Component {
   constructor() {
