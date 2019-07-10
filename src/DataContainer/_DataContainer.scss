@@ -9,18 +9,18 @@
 }
 
 h2 {
+  color: #f1f1f1;
   font-family: 'STARWARS';
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  color: #f1f1f1
 }
 
 .home-prompt {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .home-icon {
-  width: 50vh;
   max-width: 500px;
+  width: 50vh;
 }
