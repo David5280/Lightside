@@ -1,19 +1,19 @@
 
 .info-card {
-  box-sizing: border-box;
   background-color: #f1f1f1;
   border: 2px solid;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  width: 250px;
   height: fit-content;
   margin: 10px auto;
+  text-align: center;
+  width: 250px;
 }
 
 .info-card-header {
-  display: flex;
   border-bottom: 2px dotted;
+  display: flex;
 }
 
 .bold {
@@ -25,12 +25,12 @@ h3 {
 }
 
 .person-card-link {
-  text-decoration: none;
   color: black;
+  text-decoration: none;
 }
 
 .favorite-img{
-  width: 30px;
-  height: 30px;
   box-sizing: border-box;
+  height: 30px;
+  width: 30px;
 }

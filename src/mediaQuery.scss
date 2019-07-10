@@ -5,9 +5,9 @@
   }
 
   .app-header {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin: 0;
   }
 
@@ -21,9 +21,9 @@
   }
 
   nav {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin: 0;
   }
 
@@ -44,8 +44,8 @@
   }
 
   .loadingGif {
-    width: 60%;
     height: 60%;
+    width: 60%;
   }
 
   .detail-card {
