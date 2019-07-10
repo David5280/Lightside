@@ -31,7 +31,7 @@ VehicleCard.propTypes = {
   vehicleClass: PropTypes.string.isRequired,
   passengers: PropTypes.string.isRequired,
   favoriteCard: PropTypes.func.isRequired,
-  isFavorite: PropTypes.bool.isRequired
+  isFavorite: PropTypes.bool
 }
 
 export default VehicleCard;

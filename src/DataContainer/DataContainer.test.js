@@ -20,4 +20,7 @@ describe('DataContainer', () => {
     )
     expect(wrapper).toMatchSnapshot();
   })
+  it('should return all planets', () => {
+    
+  })
 });

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+const shortid = require('shortid'); 
 
 const cleaner = (data, string) => {
   if (string === 'people') {
@@ -9,7 +10,8 @@ const cleaner = (data, string) => {
         birth_year: person.birth_year,
         eye_color: person.eye_color,
         gender: person.gender,
-        isFavorite: false
+        isFavorite: false,
+        id: shortid.generate()
       }
     })
   } else if (string === 'films') {
@@ -17,7 +19,7 @@ const cleaner = (data, string) => {
       return {
         opening_crawl: film.opening_crawl,
         release_date: film.release_date,
-        title: film.title
+        title: film.title,
       }
     })
   } else if (string === 'vehicles') {
@@ -27,7 +29,8 @@ const cleaner = (data, string) => {
         model: vehicle.model,
         vehicle_class: vehicle.vehicle_class,
         passengers: vehicle.passengers,
-        isFavorite: false
+        isFavorite: false,
+        id: shortid.generate()
       }
     })
   } else {
@@ -37,7 +40,8 @@ const cleaner = (data, string) => {
         terrain: planet.terrain,
         diameter: planet.diameter,
         population: planet.population,
-        isFavorite: false
+        isFavorite: false,
+        id: shortid.generate()
       }
     })
   }

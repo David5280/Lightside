@@ -19,7 +19,7 @@ describe.only('fetchData', () => {
       })
     })
   });
-
+  
   it('should be called with the correct params', () => {
     const expected = `https://swapi.co/api/${mockString}/`;
     fetchData(mockString);
@@ -35,7 +35,7 @@ describe.only('fetchData', () => {
 
   it('it should return a rejected response if status is not ok', async() => {
     try {
-      await fetchData();
+      await fetchData(mockString);
     } catch(error) {
       expect(error).toMatch(error);
     }

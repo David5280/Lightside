@@ -34,7 +34,7 @@ PeopleCard.propTypes = {
   height: PropTypes.string.isRequired,
   eyeColor: PropTypes.string.isRequired,
   favoriteCard: PropTypes.func.isRequired,
-  isFavorite: PropTypes.bool.isRequired
+  isFavorite: PropTypes.bool
 }
 
 export default PeopleCard;
