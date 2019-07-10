@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 
 
 const PeopleCard = (props) => {
-    const { personName, birthyear, gender, height, eyeColor, favoriteCard, isFavorite } = props;
+    const { personName, birthYear, gender, height, eyeColor, favoriteCard, isFavorite } = props;
     const favoritesImgs = isFavorite ? favoredImg : notFavoredImg;
     const peopleCard = (
       <article className='info-card'>
@@ -15,7 +15,7 @@ const PeopleCard = (props) => {
           <img src={favoritesImgs} className='favorite-img' alt='fav-icon' onClick={() => favoriteCard(personName, "people")} />
         </header>
         <NavLink to={`/people/${props.id}`} className='person-card-link'>
-          <p>Birthyear: <span className='bold'>{birthyear}</span></p>
+          <p>Birthyear: <span className='bold'>{birthYear}</span></p>
           <p>Gender: <span className='bold'>{gender}</span></p>
           <p>height: <span className='bold'>{height}cm</span></p>
           <p>Eye Color: <span className='bold'>{eyeColor}</span></p>
