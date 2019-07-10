@@ -11,12 +11,12 @@ describe('DataContainer', () => {
   it('should match the snapshot', () => {
     const wrapper = shallow(
       <DataContainer 
-      peopleData={peopleData.results} 
-      vehicleData={vehiclesData.results} 
-      planetData={planetsData.results}
-      favorites={[]}
-      favoriteCard={jest.fn()}
-      />
+        peopleData={peopleData.results} 
+        vehicleData={vehiclesData.results} 
+        planetData={planetsData.results}
+        favorites={[]}
+        favoriteCard={jest.fn()}
+        />
     )
     expect(wrapper).toMatchSnapshot();
   })

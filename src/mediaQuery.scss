@@ -20,10 +20,6 @@
     width: 100%;
   }
 
-  aside {
-    display: none;
-  }
-
   nav {
     display: flex;
     flex-direction: column;
@@ -33,5 +29,26 @@
 
   .navbar-btn {
     width: 100%;
+  }
+  
+  aside {
+    display: none;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .home-icon {
+    width: 50%;
+  }
+
+  .loadingGif {
+    width: 60%;
+    height: 60%;
+  }
+
+  .detail-card {
+    width: 280px;
   }
 }
