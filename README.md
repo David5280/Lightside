@@ -31,4 +31,4 @@ LightSide is a Star Wars themed project that uses React and React-Router to rend
 
 ###  Screenshots
 
- ![App Demonstration]('https://github.com/AntonioFry/Lightside/blob/final-touches/src/images/Screenshot.gif')
+ ![App Demonstration](https://github.com/AntonioFry/Lightside/blob/final-touches/src/images/Screenshot.gif)
