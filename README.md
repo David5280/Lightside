@@ -2,69 +2,33 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # LightSide
 
+Project Participants: Antonio Fry (https://github.com/AntonioFry) & David Engel (https://github.com/David5280)
+
 ## Summary
 
-LightSide is a Star Wars themed project that uses both React and React-Router to render a site about the Star Wars mythos. The project use the Star Wars API in order to fetch data and information about the movies and character in order to display them on the site in the form of cards. The site also allows for favoriting of card which you can access via a favorites button. 
+LightSide is a Star Wars themed project that uses React and React-Router to render a site about the Star Wars mythos. The project uses a Star Wars API (https://swapi.co/documentation) in order to fetch data and information about the movies and character in order to display them on the site. The site also allows for favoriting of card which you can access via a favorites button. 
 
-### `npm start`
+### Learning Goals & Requirements
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1.  Learn how to wireframe and know why it is important.
+2.  Write squeaky clean, well refactored code using ES6 & ES7 syntax.
+3.  Make informed design decisions to create a user-friendly application.
+4.  Keep state based components to a minimum and leverage more functional components.
+5.  Use a modular architecture for your application file structure.
+6.  Think deeply about React Lifecycle Methods.
+7.  Understand and utilize React Router to effectively display data.
+8.  Use propTypes for every component receiving props.
+9.  Utilization of conditional rendering.
+10.  Rigorous testing, including on asynchronous functionalities.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+##  Installation
 
-### `npm test`
+-clone this repo to your local machine
+-run npm install to download all necessay dependencies
+-run npm start to run the server
+-open localhost:3000 (unless your terminal says otherwise)
+-experiment with the different functionalities & learn about the dark side
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+###  Screenshots
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+ ![App Demonstration]('./images/Screenshot.gif')
